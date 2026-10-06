@@ -1,86 +1,45 @@
 // ~/.config/fastfetch/config.jsonc
-//
-// MY FASTFETCH
-// Edit -> save -> run `fastfetch` again. That's the whole workflow.
-// Lines starting with // are comments. To turn something off, put // in front of it.
+// Edit -> save -> run fastfetch again.
 
 {
   "$schema": "https://github.com/fastfetch-cli/fastfetch/raw/dev/doc/json_schema.json",
 
-  // =========================================================
-  // 1) LOGO: your photo or your ASCII art
-  // =========================================================
-  // Switch what is shown by changing "type" and "source".
-  //
-  //   type          source is...                       works in
-  //   ------------  ---------------------------------  ----------------------------------------
-  //   chafa         a photo (png/jpg/...)              ANY terminal (drawn as colour text art)
-  //   kitty-direct  a photo, shown as a real image     kitty, ghostty (PNG only), wezterm
-  //   sixel         a photo, shown as a real image     foot, xterm, mlterm, ...
-  //   iterm         a photo, shown as a real image     konsole, iTerm2, wezterm
-  //   file-raw      a .txt with your ASCII/ANSI art    ANY terminal (printed exactly as-is)
-  //   file          same, but $1..$9 are colour tags   ANY terminal ("$$" prints a literal "$")
-  //   none          (no logo)
-  //
-  // Tips:
-  //  - kitty-direct and iterm need BOTH width and height set.
-  //  - A glob such as "~/Pictures/fetch/*.png" shows a random image each run.
-  //  - If your logo does not show up, run:  fastfetch --show-errors
+  // LOGO: ascii-color.txt uses colour tags: 1 = body, 2 = edges/shadow, 3 = highlights
+  // Colours: red green yellow blue magenta cyan white (prefix light_ for brighter)
   "logo": {
-    "type": "chafa",
-    "source": "~/.config/fastfetch/logo.png",
-
-    // Size in terminal cells. A cell is roughly twice as tall as it is wide,
-    // so for a square photo use width = 2 x height. Tweak until it looks right.
-    "width": 32,
-    "height": 16,
-
-    // Space around the logo (rows on top, columns left/right)
+    "type": "file",
+    "source": "~/.config/fastfetch/ascii-color.txt",
+    "color": { "1": "cyan", "2": "blue", "3": "white" },
     "padding": { "top": 1, "left": 2, "right": 3 }
-
-    // Only for type "file": the colour tags $1..$9 inside your .txt use these colours
-    // "color": { "1": "blue", "2": "cyan" }
   },
 
-  // =========================================================
-  // 2) LOOK: colours and alignment
-  // =========================================================
-  // Colours: red, green, yellow, blue, magenta, cyan, white (prefix light_ for brighter)
   "display": {
     "separator": ": ",
-    "color": { "keys": "blue", "title": "cyan" },
-    "key": { "width": 10 }
+    "color": { "keys": "cyan", "title": "blue" },
+    "key": { "width": 12 }
   },
 
-  // =========================================================
-  // 3) CONTENT: what gets printed, top to bottom
-  // =========================================================
-  // Reorder = move a line. Hide = delete it or put // in front of it.
-  // "key" is the label you see. Everything available: fastfetch --list-modules
+  // INFO: delete a line (or put // in front of it) to hide it.
+  // Everything available: fastfetch --list-modules
   "modules": [
     "title",
     "separator",
     { "type": "os",       "key": "OS" },
-    { "type": "host",     "key": "Host" },
     { "type": "kernel",   "key": "Kernel" },
     { "type": "uptime",   "key": "Uptime" },
     { "type": "packages", "key": "Packages" },
     { "type": "shell",    "key": "Shell" },
-    { "type": "de",       "key": "DE" },
     { "type": "wm",       "key": "WM" },
     { "type": "terminal", "key": "Terminal" },
-    "break",
     { "type": "cpu",      "key": "CPU" },
-    { "type": "gpu",      "key": "GPU" },
     { "type": "memory",   "key": "Memory" },
-    { "type": "disk",     "key": "Disk" },
     "break",
     "colors"
 
-    // Extras you can paste in above (mind the comma after the line before):
+    // Extras you can paste in above (mind the comma on the line before):
+    //   { "type": "host",    "key": "Host" },
+    //   { "type": "gpu",     "key": "GPU" },
+    //   { "type": "disk",    "key": "Disk" },
     //   { "type": "battery", "key": "Battery" },
-    //   { "type": "localip", "key": "IP" },
-    //   { "type": "swap",    "key": "Swap" },
-    //   { "type": "custom",  "format": "any text you want" },
   ]
 }

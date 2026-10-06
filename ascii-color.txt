@@ -1,0 +1,13 @@
+$2               $3Nm$2$1ddd$2y:
+$2              $1d$2$3N$2$1dddd$2+-
+$2              $3Nm$2$1ddd$2y:
+$2             $1d$2$3N$2$1dddd$2+-
+$2   +oooooooos$3Nm$2$1ddd$2y++ooooooo+
+$2  o$3Nmmmmmmmmmm$2$1dddddd$2$3mmmmmmm$2$1h$2+
+$2  $1d$2$3N$2$1ddddddddddddddddddddddd$2+-
+$2 o$3m$2$1h$2yyyyyyy$1ddddddh$2yyyyyyyys:
+$2  --------+$3N$2$1dddd$2y:.--------
+$2          $1d$2$3N$2$1dddd$2+-  yyyyyy:
+$2          $3Nm$2$1ddd$2y:  $1h$2$3N$2$1dddd$2o-
+$2         $1d$2$3N$2$1dddd$2+-  $3Nm$2$1ddd$2y:
+$2         $3Nm$2$1ddd$2y:  $1h$2$3N$2$1dddh$2+-
